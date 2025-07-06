@@ -1,8 +1,12 @@
 const relogio = setInterval(function teste() {
-    const hora = new Date()
-    const horas = hora.getHours()
-    const minutos = hora.getMinutes()
-    const segundos = hora.getSeconds()
+    let hora = new Date()
+    let horas = hora.getHours()
+    let minutos = hora.getMinutes()
+    let segundos = hora.getSeconds()
+
+    if(horas < 10) horas = '0' + horas
+    if(minutos < 10) minutos = '0' + minutos
+    if(segundos < 10) segundos = '0' + segundos
 
     const hor = document.getElementById('hor')
     const min = document.getElementById('min')
@@ -10,5 +14,5 @@ const relogio = setInterval(function teste() {
 
     hor.innerHTML = `${horas}`
     min.innerHTML = `${minutos}`
-    seg.innerHTML = `${segundos}` 
+    seg.innerHTML = `${segundos}`
 })
