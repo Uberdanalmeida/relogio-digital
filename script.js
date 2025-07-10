@@ -12,7 +12,7 @@ const relogio = setInterval(function teste() {
     const min = document.getElementById('min')
     const seg = document.getElementById('seg')
 
-    hor.innerHTML = `${horas}`
-    min.innerHTML = `${minutos}`
+    hor.innerHTML = `${horas} <p class="ponto">:</P>`
+    min.innerHTML = `${minutos} <p class="ponto">:</P>`
     seg.innerHTML = `${segundos}`
 })

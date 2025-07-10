@@ -29,10 +29,7 @@ body {
 }
 
 span {
-    display: flex;
-    flex-direction: column;
-    color: #ffff;
-    padding: 10px;
+    display: none;
 }
 
 p {
@@ -42,11 +39,6 @@ p {
     justify-content: center;
     color: aquamarine;
     background-color: black;
-}
-
-#seg {
-    margin-left: 12px;
-    justify-content: left;
 }
 
 @media (max-width: 480px) {
@@ -65,6 +57,17 @@ p {
     
     #digital {
         display: grid;
+    }
+
+    span {
+        display: flex;
+        flex-direction: column;
+        color: #ffff;
+        padding: 10px;
+    }
+
+    .ponto {
+        display: none;
     }
     
     #seg {
