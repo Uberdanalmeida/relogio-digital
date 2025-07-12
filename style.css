@@ -41,6 +41,10 @@ p {
     background-color: black;
 }
 
+#seg {
+    display: none;
+}
+
 @media (max-width: 480px) {
     
     body {
@@ -71,6 +75,7 @@ p {
     }
     
     #seg {
+        display: flex;
         justify-content: center;
     }
 }
