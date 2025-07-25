@@ -1,5 +1,7 @@
 # 🕒 Relógio Digital
 
+![Relogio Digital](imagem/relogio-digital.png)
+
 Um simples e elegante relógio digital feito com **HTML**, **CSS** e **JavaScript**, que exibe a hora atual em tempo real com um layout responsivo.
 
 ## 💻 Demonstração
