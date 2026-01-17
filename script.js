@@ -1,18 +1,18 @@
-const relogio = setInterval(function teste() {
-    let hora = new Date()
-    let horas = hora.getHours()
-    let minutos = hora.getMinutes()
-    let segundos = hora.getSeconds()
+function atualizarRelogio() {
+    const agora = new Date();
+    
+    // Pega os valores e adiciona o '0' na frente se for menor que 10
+    const horas = String(agora.getHours()).padStart(2, '0');
+    const minutos = String(agora.getMinutes()).padStart(2, '0');
+    const segundos = String(agora.getSeconds()).padStart(2, '0');
 
-    if(horas < 10) horas = '0' + horas
-    if(minutos < 10) minutos = '0' + minutos
-    if(segundos < 10) segundos = '0' + segundos
+    document.getElementById('hor').textContent = horas;
+    document.getElementById('min').textContent = minutos;
+    document.getElementById('seg').textContent = segundos;
+}
 
-    const hor = document.getElementById('hor')
-    const min = document.getElementById('min')
-    const seg = document.getElementById('seg')
+// Executa a cada 1 segundo
+setInterval(atualizarRelogio, 1000);
 
-    hor.innerHTML = `${horas} <p class="ponto">:</P>`
-    min.innerHTML = `${minutos}`
-    seg.innerHTML = `${segundos}`
-})
+// Chama uma vez imediatamente para não esperar 1 segundo ao carregar a página
+atualizarRelogio();
