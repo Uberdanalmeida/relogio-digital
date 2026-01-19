@@ -28,9 +28,3 @@ Um simples e elegante relógio digital feito com **HTML**, **CSS** e **JavaScrip
 ## 📱 Responsividade
 
 Layout adaptável para **smartphones** e **telas menores**, com mudanças de cores e organização dos elementos para melhor usabilidade.
-
-## 🛠️ Como Usar
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seuusuario/relogio-digital.git
