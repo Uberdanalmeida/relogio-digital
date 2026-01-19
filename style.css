@@ -1,28 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
+:root {
+    --bg-color: #1a1a2e;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-main: #00d2ff;
+    --text-label: #888;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Cores para o Modo Claro */
+.light-mode {
+    --bg-color: #e0e0e0;
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --text-main: #2575fc;
+    --text-label: #555;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Share Tech Mono', monospace;
+    transition: all 0.3s ease; /* Transição suave de cores */
 }
 
 body {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background: var(--bg-color);
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 #relogio-digital {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    padding: 30px 50px;
-    border-radius: 15px;
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 40px var(--shadow);
+    position: relative;
+}
+
+/* Botão de Troca de Tema */
+.theme-switch {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    background: rgba(255,255,255,0.1);
+    padding: 5px 10px;
+    border-radius: 50%;
 }
 
 #digital {
@@ -35,42 +65,33 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 80px;
+    min-width: 90px;
 }
 
-/* Os números */
-.caixa span:first-child {
-    font-size: 60px;
-    color: #00d2ff;
-    text-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
+#hor, #min, #seg {
+    font-size: 70px;
+    color: var(--text-main);
+    text-shadow: 0 0 15px var(--text-main);
 }
 
-/* O texto abaixo (Horas, Minutos...) */
 .label {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 2px;
-    color: #888;
-    margin-top: 5px;
+    color: var(--text-label);
+    font-weight: bold;
 }
 
 .divisor {
-    font-size: 40px;
-    color: #00d2ff;
-    padding-bottom: 20px; /* Alinha o ":" com o topo dos números */
+    font-size: 45px;
+    color: var(--text-main);
     animation: piscar 1s infinite;
 }
 
 @keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.2; }
+    50% { opacity: 0; }
 }
 
-/* Responsividade para celulares */
 @media (max-width: 480px) {
-    #digital {
-        flex-direction: column;
-    }
-    .divisor {
-        display: none; /* Esconde os ":" no modo vertical */
-    }
+    #digital { flex-direction: column; }
+    .divisor { display: none; }
 }

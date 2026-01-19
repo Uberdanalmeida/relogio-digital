@@ -1,7 +1,6 @@
 function atualizarRelogio() {
     const agora = new Date();
     
-    // Pega os valores e adiciona o '0' na frente se for menor que 10
     const horas = String(agora.getHours()).padStart(2, '0');
     const minutos = String(agora.getMinutes()).padStart(2, '0');
     const segundos = String(agora.getSeconds()).padStart(2, '0');
@@ -11,8 +10,19 @@ function atualizarRelogio() {
     document.getElementById('seg').textContent = segundos;
 }
 
-// Executa a cada 1 segundo
-setInterval(atualizarRelogio, 1000);
+// Função para trocar o tema
+function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    
+    body.classList.toggle('light-mode');
+    
+    if (body.classList.contains('light-mode')) {
+        icon.textContent = '☀️';
+    } else {
+        icon.textContent = '🌙';
+    }
+}
 
-// Chama uma vez imediatamente para não esperar 1 segundo ao carregar a página
+setInterval(atualizarRelogio, 1000);
 atualizarRelogio();
